@@ -8,10 +8,10 @@ class Landing extends CI_Controller
         $post = $this->input->post(null, true);
         if (isset($post['cek'])) {
             $this->load->model('landing_m');
-            if ($this->landing_m->get_guru($post['nbm'])->num_rows() > 0) {
-                redirect('info/' . $post['nbm'] . '#hasil');
+            if ($this->landing_m->get_guru($post['nuptk'])->num_rows() > 0) {
+                redirect('info/' . $post['nuptk'] . '#hasil');
             } else {
-                $this->session->set_flashdata('unknow', 'NBM Tidak terdaftar pada sistem!');
+                $this->session->set_flashdata('unknow', 'nuptk Tidak terdaftar pada sistem!');
                 redirect('');
             }
         } else {
@@ -19,11 +19,11 @@ class Landing extends CI_Controller
         }
     }
 
-    public function info($nbm)
+    public function info($nuptk)
     {
         $this->load->model('leader/penilaian_m');
         $this->load->model('landing_m');
-        $temp  = $this->landing_m->get_guru($nbm)->row();
+        $temp  = $this->landing_m->get_guru($nuptk)->row();
         $data = [
             'kriteria' => $this->penilaian_m->get_kriteria(),
             'guru' => $temp,

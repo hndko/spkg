@@ -13,7 +13,7 @@
 <body>
     <section style="margin-bottom: 20px;">
         <center>
-            <img src="<?= base_url() . 'assets/images/surat/kop-surat.JPG' ?>" alt="" style="width:100%;height:140px">
+            <img src="<?= base_url() . 'assets/images/surat/kop-surat.png' ?>" alt="" style="width:100%;height:140px">
         </center>
     </section>
     <section>
@@ -29,7 +29,7 @@
             <thead>
                 <tr>
                     <th style="padding:5px" width="5%">No</th>
-                    <th style="padding:5px">NBM</th>
+                    <th style="padding:5px">nuptk</th>
                     <th style="padding:5px">Nama</th>
                     <th style="padding:5px">Nilai</th>
                     <th style="padding:5px">Grade</th>
@@ -45,7 +45,7 @@
                 ?>
                     <tr>
                         <td style="padding:5px"><?= $key + 1 ?></td>
-                        <td style="padding:5px"><?= get_guru_byid($data->id_guru)->nbm_guru ?></td>
+                        <td style="padding:5px"><?= get_guru_byid($data->id_guru)->nuptk_guru ?></td>
                         <td style="padding:5px"><?= get_guru_byid($data->id_guru)->nama_guru ?></td>
                         <td style="padding:5px"><?= ($data->hasil_penilaian * 100) ?></td>
                         <td style="padding:5px"><?= $all_grade['grade'] ?></td>

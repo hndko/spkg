@@ -15,8 +15,8 @@
                     <div class="row mt-3">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label>NBM Guru *</label>
-                                <input type="number" name="g_nbm" value="<?= @$row->nbm_guru ?>" class="form-control" id="exampleInputUsername2" placeholder="ex. 7311732" required>
+                                <label>nuptk Guru *</label>
+                                <input type="number" name="g_nuptk" value="<?= @$row->nuptk_guru ?>" class="form-control" id="exampleInputUsername2" placeholder="ex. 7311732" required>
                             </div>
                         </div>
                         <div class="col-sm-6">

@@ -3,10 +3,10 @@
 class Landing_m extends CI_Model
 {
 
-    function get_guru($nbm)
+    function get_guru($nuptk)
     {
         $this->db->from('tbl_guru');
-        $this->db->where('nbm_guru', $nbm);
+        $this->db->where('nuptk_guru', $nuptk);
         $query = $this->db->get();
         return $query;
     }

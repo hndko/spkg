@@ -68,6 +68,15 @@ function get_guru_byid($id)
     return $query->row();
 }
 
+function get_guru_bynuptk($id)
+{
+    $ci = &get_instance();
+    $ci->db->from('tbl_guru');
+    $ci->db->where('nuptk_guru', $id);
+    $query = $ci->db->get();
+    return $query;
+}
+
 function get_guru_all()
 {
     $ci = &get_instance();

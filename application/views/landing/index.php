@@ -65,9 +65,9 @@
                         </div>
                     <?php } ?>
                     <form action="" method="post">
-                        <label> Cari Data Penilaianmu dengan mengisi NBM mu dibawah ini * </label>
+                        <label> Cari Data Penilaianmu dengan mengisi nuptk mu dibawah ini * </label>
                         <div class="input-group mb-3 mt-2">
-                            <input type="number" name="nbm" class="form-control" placeholder="Nomor Baku Muhammadiyah (NBM) Guru" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                            <input type="number" name="nuptk" class="form-control" placeholder="Nomor Baku Muhammadiyah (nuptk) Guru" aria-label="Recipient's username" aria-describedby="button-addon2" required>
                             <button type="submit" name="cek" class="btn btn-success" type="button" id="button-addon2">Cek Penilaian</button>
                         </div>
                     </form>
@@ -75,7 +75,7 @@
                 <!-- START THE CONTENT FOR THE VIDEO -->
                 <div class="col-md-5 intros text-end">
                     <div class="video-box">
-                        <img src="<?= base_url() ?>assets/images/logo.png" alt="video illutration" class="img-fluid" style="width: 80%;">
+                        <img src="<?= base_url() ?>assets/images/logo-m.png" alt="video illutration" class="img-fluid" style="width: 80%;">
                     </div>
                 </div>
             </div>
@@ -99,11 +99,11 @@
                             <div class="card-body">
                                 <div class="row" style="color:white">
                                     <div class="col-sm-12 text-center">
-                                        <img src="<?= base_url() . 'assets/images/logo.png' ?>" style="width:30%">
+                                        <img src="<?= base_url() . 'assets/images/guru/' . $guru->img_guru ?>" style="width:30%">
                                     </div>
                                     <div class="col-sm-12 mt-3 text-center">
                                         <h4><?= $guru->nama_guru ?></h4>
-                                        <p>NBM. <?= $guru->nbm_guru ?></p>
+                                        <p>nuptk. <?= $guru->nuptk_guru ?></p>
                                     </div>
                                 </div>
                             </div>

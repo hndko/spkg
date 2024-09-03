@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 03 Sep 2024 pada 10.27
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 7.4.33
+-- Host: localhost:3306
+-- Generation Time: Sep 03, 2024 at 05:06 PM
+-- Server version: 8.0.30
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,17 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_dokumen_pendukung`
+-- Table structure for table `tbl_dokumen_pendukung`
 --
 
 CREATE TABLE `tbl_dokumen_pendukung` (
-  `id` int(11) NOT NULL,
-  `file` varchar(255) NOT NULL,
+  `id` int NOT NULL,
+  `file` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tbl_dokumen_pendukung`
+-- Dumping data for table `tbl_dokumen_pendukung`
 --
 
 INSERT INTO `tbl_dokumen_pendukung` (`id`, `file`, `created_at`) VALUES
@@ -43,27 +43,27 @@ INSERT INTO `tbl_dokumen_pendukung` (`id`, `file`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_guru`
+-- Table structure for table `tbl_guru`
 --
 
 CREATE TABLE `tbl_guru` (
-  `id_guru` varchar(50) NOT NULL,
-  `id_user` varchar(50) DEFAULT NULL,
-  `nbm_guru` varchar(50) NOT NULL,
-  `nama_guru` varchar(256) NOT NULL,
-  `ttl_guru` varchar(255) NOT NULL,
-  `gender_guru` varchar(1) NOT NULL,
-  `telp_guru` varchar(15) NOT NULL,
-  `alamat_guru` text NOT NULL,
-  `img_guru` varchar(256) DEFAULT NULL,
-  `created_guru` datetime NOT NULL DEFAULT current_timestamp()
+  `id_guru` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `id_user` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `nuptk_guru` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nama_guru` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
+  `ttl_guru` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `gender_guru` varchar(1) COLLATE utf8mb4_general_ci NOT NULL,
+  `telp_guru` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
+  `alamat_guru` text COLLATE utf8mb4_general_ci NOT NULL,
+  `img_guru` varchar(256) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `created_guru` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tbl_guru`
+-- Dumping data for table `tbl_guru`
 --
 
-INSERT INTO `tbl_guru` (`id_guru`, `id_user`, `nbm_guru`, `nama_guru`, `ttl_guru`, `gender_guru`, `telp_guru`, `alamat_guru`, `img_guru`, `created_guru`) VALUES
+INSERT INTO `tbl_guru` (`id_guru`, `id_user`, `nuptk_guru`, `nama_guru`, `ttl_guru`, `gender_guru`, `telp_guru`, `alamat_guru`, `img_guru`, `created_guru`) VALUES
 ('1GhC90eBvrgPy6uVqF2tXsTJAxw78D', '04494775897859116283626370058312531', '172518', 'Ismail Marzuki, S.KM', 'Sleman, 18 Oktober 1978', 'L', '089901829167', 'l. Panembahan Senopati No.1-3, Ngupasan, Kec. Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55122', 'guru-172518.png', '2022-06-27 01:08:01'),
 ('99844622586478595', '99844622586478595', '545549', 'Dadang Priyatmaji, S.Sos.I', 'Yogyakarta, 23 Maret 1972', 'L', '08123412345678', 'Jl. Cik Di Tiro No.23, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223', 'guru-545549.jpg', '2022-06-26 19:42:07'),
 ('KT7oWLin40NMHzvfXSAaPmIV5ey9Jp', '62766949733061441274583818290035052', '418429', 'Andra Sutepa, S.Pd', 'Bantul', 'L', '079901728190', '-', NULL, '2022-06-28 18:47:28'),
@@ -73,19 +73,19 @@ INSERT INTO `tbl_guru` (`id_guru`, `id_user`, `nbm_guru`, `nama_guru`, `ttl_guru
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kriteria`
+-- Table structure for table `tbl_kriteria`
 --
 
 CREATE TABLE `tbl_kriteria` (
-  `id_kriteria` int(11) NOT NULL,
-  `data_kriteria` varchar(256) NOT NULL,
-  `atribut_kriteria` varchar(256) NOT NULL,
-  `bobot_kriteria` varchar(50) NOT NULL,
-  `created_kriteria` datetime NOT NULL DEFAULT current_timestamp()
+  `id_kriteria` int NOT NULL,
+  `data_kriteria` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
+  `atribut_kriteria` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
+  `bobot_kriteria` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `created_kriteria` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tbl_kriteria`
+-- Dumping data for table `tbl_kriteria`
 --
 
 INSERT INTO `tbl_kriteria` (`id_kriteria`, `data_kriteria`, `atribut_kriteria`, `bobot_kriteria`, `created_kriteria`) VALUES
@@ -97,46 +97,68 @@ INSERT INTO `tbl_kriteria` (`id_kriteria`, `data_kriteria`, `atribut_kriteria`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_nilai`
+-- Table structure for table `tbl_nilai`
 --
 
 CREATE TABLE `tbl_nilai` (
-  `id_penilaian` varchar(50) NOT NULL,
-  `id_guru` varchar(50) NOT NULL,
-  `nilai_penilaian` varchar(256) DEFAULT NULL,
-  `hasil_penilaian` varchar(50) NOT NULL,
-  `created_penilaian` datetime NOT NULL DEFAULT current_timestamp()
+  `id_penilaian` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `id_guru` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `nilai_penilaian` varchar(256) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `hasil_penilaian` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `created_penilaian` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_nilai`
+--
+
+INSERT INTO `tbl_nilai` (`id_penilaian`, `id_guru`, `nilai_penilaian`, `hasil_penilaian`, `created_penilaian`) VALUES
+('IfuKQ2AcHiyZbTGtq60N39B1gLrR7lvO8PX4azdw', 'mLOxGa2fiztsCARuhIK57oNwvXlyHY', '0.19,0.25,0.13,0.06,', '0.63', '2024-09-03 22:56:37'),
+('mEfuMQRBPOW6KZD7SydtAc8Il4JNvgsHk9iaUzoG', 'u25d1IqZK9DWTrecg8FGUpAlPt0Skw', '0.13,0.25,0.25,0.13,', '0.75', '2024-09-03 22:56:30'),
+('qKgiCNh3raTP6Xz9D4yxftMW82HJ5SZnAQ0wupeV', '99844622586478595', '0.19,0.25,0.19,0.19,', '0.81', '2024-09-03 22:56:22'),
+('W7dPr0iOebhkAjZwHygRTpnGluI1m6Bz5NtQ284c', 'KT7oWLin40NMHzvfXSAaPmIV5ey9Jp', '0.25,0.13,0.19,0.25,', '0.81', '2024-09-03 22:56:15'),
+('wG14mRt3MbNP6ZjLhfX82ynK7elzOsHvpUq0EAoi', '1GhC90eBvrgPy6uVqF2tXsTJAxw78D', '0.25,0.19,0.19,0.25,', '0.88', '2024-09-03 22:56:06');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_nilai_normal`
+-- Table structure for table `tbl_nilai_normal`
 --
 
 CREATE TABLE `tbl_nilai_normal` (
-  `id_unnormal` int(11) NOT NULL,
-  `id_penilaian` varchar(50) NOT NULL,
-  `nilai_unnormal` varchar(256) NOT NULL,
-  `nilai_normal` varchar(256) NOT NULL
+  `id_unnormal` int NOT NULL,
+  `id_penilaian` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `nilai_unnormal` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
+  `nilai_normal` varchar(256) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_nilai_normal`
+--
+
+INSERT INTO `tbl_nilai_normal` (`id_unnormal`, `id_penilaian`, `nilai_unnormal`, `nilai_normal`) VALUES
+(1, 'wG14mRt3MbNP6ZjLhfX82ynK7elzOsHvpUq0EAoi', '4,3,3,4,', '1,0.75,0.75,1,'),
+(2, 'W7dPr0iOebhkAjZwHygRTpnGluI1m6Bz5NtQ284c', '4,2,3,4,', '1,0.5,0.75,1,'),
+(3, 'qKgiCNh3raTP6Xz9D4yxftMW82HJ5SZnAQ0wupeV', '3,4,3,3,', '0.75,1,0.75,0.75,'),
+(4, 'mEfuMQRBPOW6KZD7SydtAc8Il4JNvgsHk9iaUzoG', '2,4,4,2,', '0.5,1,1,0.5,'),
+(5, 'IfuKQ2AcHiyZbTGtq60N39B1gLrR7lvO8PX4azdw', '3,4,2,1,', '0.75,1,0.5,0.25,');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_sub_kriteria`
+-- Table structure for table `tbl_sub_kriteria`
 --
 
 CREATE TABLE `tbl_sub_kriteria` (
-  `id_sub_kriteria` int(11) NOT NULL,
-  `id_kriteria` int(11) NOT NULL,
-  `data_sub_kriteria` text NOT NULL,
-  `level_sub_kriteria` int(1) NOT NULL,
-  `created_sub_kriteria` datetime NOT NULL DEFAULT current_timestamp()
+  `id_sub_kriteria` int NOT NULL,
+  `id_kriteria` int NOT NULL,
+  `data_sub_kriteria` text COLLATE utf8mb4_general_ci NOT NULL,
+  `level_sub_kriteria` int NOT NULL,
+  `created_sub_kriteria` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tbl_sub_kriteria`
+-- Dumping data for table `tbl_sub_kriteria`
 --
 
 INSERT INTO `tbl_sub_kriteria` (`id_sub_kriteria`, `id_kriteria`, `data_sub_kriteria`, `level_sub_kriteria`, `created_sub_kriteria`) VALUES
@@ -160,20 +182,20 @@ INSERT INTO `tbl_sub_kriteria` (`id_sub_kriteria`, `id_kriteria`, `data_sub_krit
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_user`
+-- Table structure for table `tbl_user`
 --
 
 CREATE TABLE `tbl_user` (
-  `id_user` varchar(50) NOT NULL,
-  `username_user` varchar(256) NOT NULL,
-  `password_user` varchar(256) NOT NULL,
-  `level_user` int(1) NOT NULL,
-  `status_user` int(1) NOT NULL,
-  `created_user` datetime NOT NULL DEFAULT current_timestamp()
+  `id_user` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `username_user` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
+  `password_user` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
+  `level_user` int NOT NULL,
+  `status_user` int NOT NULL,
+  `created_user` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tbl_user`
+-- Dumping data for table `tbl_user`
 --
 
 INSERT INTO `tbl_user` (`id_user`, `username_user`, `password_user`, `level_user`, `status_user`, `created_user`) VALUES
@@ -186,77 +208,77 @@ INSERT INTO `tbl_user` (`id_user`, `username_user`, `password_user`, `level_user
 --
 
 --
--- Indeks untuk tabel `tbl_dokumen_pendukung`
+-- Indexes for table `tbl_dokumen_pendukung`
 --
 ALTER TABLE `tbl_dokumen_pendukung`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tbl_guru`
+-- Indexes for table `tbl_guru`
 --
 ALTER TABLE `tbl_guru`
   ADD PRIMARY KEY (`id_guru`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indeks untuk tabel `tbl_kriteria`
+-- Indexes for table `tbl_kriteria`
 --
 ALTER TABLE `tbl_kriteria`
   ADD PRIMARY KEY (`id_kriteria`);
 
 --
--- Indeks untuk tabel `tbl_nilai`
+-- Indexes for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
   ADD PRIMARY KEY (`id_penilaian`),
   ADD KEY `id_guru` (`id_guru`);
 
 --
--- Indeks untuk tabel `tbl_nilai_normal`
+-- Indexes for table `tbl_nilai_normal`
 --
 ALTER TABLE `tbl_nilai_normal`
   ADD PRIMARY KEY (`id_unnormal`);
 
 --
--- Indeks untuk tabel `tbl_sub_kriteria`
+-- Indexes for table `tbl_sub_kriteria`
 --
 ALTER TABLE `tbl_sub_kriteria`
   ADD PRIMARY KEY (`id_sub_kriteria`),
   ADD KEY `id_kriteria` (`id_kriteria`);
 
 --
--- Indeks untuk tabel `tbl_user`
+-- Indexes for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_dokumen_pendukung`
+-- AUTO_INCREMENT for table `tbl_dokumen_pendukung`
 --
 ALTER TABLE `tbl_dokumen_pendukung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_kriteria`
+-- AUTO_INCREMENT for table `tbl_kriteria`
 --
 ALTER TABLE `tbl_kriteria`
-  MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_kriteria` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_nilai_normal`
+-- AUTO_INCREMENT for table `tbl_nilai_normal`
 --
 ALTER TABLE `tbl_nilai_normal`
-  MODIFY `id_unnormal` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_unnormal` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_sub_kriteria`
+-- AUTO_INCREMENT for table `tbl_sub_kriteria`
 --
 ALTER TABLE `tbl_sub_kriteria`
-  MODIFY `id_sub_kriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_sub_kriteria` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

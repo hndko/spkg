@@ -3,13 +3,21 @@
 class Guru_m extends CI_Model
 {
 
+    function get_guru_nuptk($id)
+    {
+        $this->db->from('tbl_guru');
+        $this->db->where('nuptk_guru', $id);
+        $query = $this->db->get();
+        return $query;
+    }
+
     function get_guru($id = null)
     {
         $this->db->from('tbl_guru');
         if ($id != null) {
             $this->db->where('id_guru', $id);
         } else {
-            $this->db->order_by('nbm_guru', 'ASC');
+            $this->db->order_by('nuptk_guru', 'ASC');
         }
         $query = $this->db->get();
         return $query;
@@ -20,7 +28,7 @@ class Guru_m extends CI_Model
         $params = [
             'id_guru' => random_string('alnum', 30),
             'id_user' => $post['id_user'],
-            'nbm_guru' => $post['g_nbm'],
+            'nuptk_guru' => $post['g_nuptk'],
             'nama_guru' => $post['g_nama'],
             'ttl_guru' => $post['g_ttl'],
             'gender_guru' => $post['g_gender'],
@@ -34,7 +42,7 @@ class Guru_m extends CI_Model
     function update_guru($post)
     {
         $params = [
-            'nbm_guru' => $post['g_nbm'],
+            'nuptk_guru' => $post['g_nuptk'],
             'nama_guru' => $post['g_nama'],
             'ttl_guru' => $post['g_ttl'],
             'gender_guru' => $post['g_gender'],
@@ -56,8 +64,8 @@ class Guru_m extends CI_Model
     {
         $params = [
             'id_user' => $post['id_user'],
-            'username_user' => $post['g_nbm'],
-            'password_user' => sha1($post['g_nbm']),
+            'username_user' => $post['g_nuptk'],
+            'password_user' => sha1($post['g_nuptk']),
             'level_user' => 3,
             'status_user' => 1,
         ];

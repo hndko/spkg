@@ -17,7 +17,7 @@
                                 <thead>
                                     <tr>
                                         <th width="10%">Guru</th>
-                                        <th>NBM</th>
+                                        <th>NUPTK</th>
                                         <th>Nama</th>
                                         <th>TTL</th>
                                         <th>Jenis Kelamin</th>
@@ -48,9 +48,9 @@
                                                                         <div class="table-responsive">
                                                                             <table class="table">
                                                                                 <tr>
-                                                                                    <td>NBM Guru</td>
+                                                                                    <td>nuptk Guru</td>
                                                                                     <td>:</td>
-                                                                                    <td><?= $guru->nbm_guru ?></td>
+                                                                                    <td><?= $guru->nuptk_guru ?></td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>Nama Guru</td>
@@ -89,7 +89,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td><?= $guru->nbm_guru ?></td>
+                                            <td><?= $guru->nuptk_guru ?></td>
                                             <td><?= $guru->nama_guru ?></td>
                                             <td><?= $guru->ttl_guru ?></td>
                                             <td><?= $guru->gender_guru == 'L' ? 'Laki-laki' : 'Perempuan' ?></td>

@@ -16,13 +16,6 @@
                                     <td colspan="3"><strong>Cetak Laporan Penilaian Kinerja Guru</strong></td>
                                 </tr>
                                 <tr>
-                                    <td width="20%"> Laporan Keseluruhan</td>
-                                    <td width="5%">:</td>
-                                    <td>
-                                        <a href="<?= site_url('leader/laporan/cetak') ?>" target="_blank" class="btn btn-primary btn-sm"><i class="icon-printer"></i> Cetak</a>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td>Laporan Tiap Guru</td>
                                     <td>:</td>
                                     <td>
@@ -31,8 +24,8 @@
                                                 <div class="col-sm-8">
                                                     <select name="id" class="form-control mb-2" data-live-search="true" required>
                                                         <option value="">- pilih guru -</option>
-                                                        <?php foreach (get_guru_all()->result() as $key => $teac) { ?>
-                                                            <option value="<?= $teac->id_guru ?>"><?= $teac->nbm_guru . ' - ' . $teac->nama_guru ?></option>
+                                                        <?php foreach (get_guru_bynuptk($user)->result() as $key => $teac) { ?>
+                                                            <option value="<?= $teac->id_guru ?>"><?= $teac->nuptk_guru . ' - ' . $teac->nama_guru ?></option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>

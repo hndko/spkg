@@ -17,7 +17,7 @@
                                 <thead>
                                     <tr>
                                         <th width="5%">No</th>
-                                        <th>NBM</th>
+                                        <th>nuptk</th>
                                         <th>Nama</th>
                                         <th width="10%">Status</th>
                                         <th width="15%">Aksi</th>
@@ -27,7 +27,7 @@
                                     <?php foreach ($guru->result() as $key => $data) { ?>
                                         <tr>
                                             <td><?= $key + 1 ?></td>
-                                            <td><?= $data->nbm_guru ?></td>
+                                            <td><?= $data->nuptk_guru ?></td>
                                             <td><?= $data->nama_guru ?></td>
                                             <td><?= get_penilaian_byguru($data->id_guru)->num_rows() == 0 ? '<span class="badge bg-danger text-white">Belum Dinilai</span>' : '<span class="badge bg-success text-white">Sudah Dinilai</span>' ?></td>
                                             <td>

@@ -18,7 +18,7 @@
                                 <thead>
                                     <tr>
                                         <th width="5%">No</th>
-                                        <th>NBM</th>
+                                        <th>NUPTK</th>
                                         <th>Nama</th>
                                         <?php foreach ($kriteria->result() as $key => $kri) { ?>
                                             <th><?= $kri->atribut_kriteria ?></th>
@@ -34,7 +34,7 @@
                                         $all_grade = grade_nilai($data->hasil_penilaian); ?>
                                         <tr>
                                             <td><?= $key + 1 ?></td>
-                                            <td><?= get_guru_byid($data->id_guru)->nbm_guru ?></td>
+                                            <td><?= get_guru_byid($data->id_guru)->nuptk_guru ?></td>
                                             <td><?= get_guru_byid($data->id_guru)->nama_guru ?></td>
                                             <?php foreach ($kriteria->result() as $key => $kri) { ?>
                                                 <td><?= $val[$key] ?></td>

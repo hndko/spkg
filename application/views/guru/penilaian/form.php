@@ -17,9 +17,9 @@
                                 <td colspan="3"><strong>Identitas Guru</strong></td>
                             </tr>
                             <tr>
-                                <td width="20%">NBM Guru</td>
+                                <td width="20%">NUPTK Guru</td>
                                 <td width="5%">:</td>
-                                <td>NBM. <?= $guru->nbm_guru ?></td>
+                                <td>nuptk. <?= $guru->nuptk_guru ?></td>
                             </tr>
                             <tr>
                                 <td>Nama Guru</td>

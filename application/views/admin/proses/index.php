@@ -31,7 +31,7 @@
                                         <thead>
                                             <tr>
                                                 <th width="5%">No</th>
-                                                <th>NBM</th>
+                                                <th>NUPTK</th>
                                                 <th>Nama</th>
                                                 <?php foreach ($kriteria->result() as $key => $kri) { ?>
                                                     <th><?= $kri->atribut_kriteria ?></th>
@@ -47,7 +47,7 @@
                                                 $all_grade = grade_nilai($data->hasil_penilaian); ?>
                                                 <tr>
                                                     <td><?= $key + 1 ?></td>
-                                                    <td><?= get_guru_byid($data->id_guru)->nbm_guru ?></td>
+                                                    <td><?= get_guru_byid($data->id_guru)->nuptk_guru ?></td>
                                                     <td><?= get_guru_byid($data->id_guru)->nama_guru ?></td>
                                                     <?php foreach ($kriteria->result() as $key => $kri) { ?>
                                                         <td><?= $val[$key] ?></td>
@@ -70,7 +70,7 @@
                                         <thead>
                                             <tr>
                                                 <th width="5%">No</th>
-                                                <th>NBM</th>
+                                                <th>nuptk</th>
                                                 <th>Nama</th>
                                                 <?php foreach ($kriteria->result() as $key => $kri) { ?>
                                                     <th><?= $kri->atribut_kriteria ?></th>
@@ -82,7 +82,7 @@
                                                 $val = explode(',', get_nilai_normal_byid($data->id_penilaian)->nilai_unnormal); ?>
                                                 <tr>
                                                     <td><?= $key + 1 ?></td>
-                                                    <td><?= get_guru_byid($data->id_guru)->nbm_guru ?></td>
+                                                    <td><?= get_guru_byid($data->id_guru)->nuptk_guru ?></td>
                                                     <td><?= get_guru_byid($data->id_guru)->nama_guru ?></td>
                                                     <?php foreach ($kriteria->result() as $key => $kri) { ?>
                                                         <td><?= $val[$key] ?></td>
@@ -101,7 +101,7 @@
                                         <thead>
                                             <tr>
                                                 <th width="5%">No</th>
-                                                <th>NBM</th>
+                                                <th>nuptk</th>
                                                 <th>Nama</th>
                                                 <?php foreach ($kriteria->result() as $key => $kri) { ?>
                                                     <th><?= $kri->atribut_kriteria ?></th>
@@ -113,7 +113,7 @@
                                                 $val = explode(',', get_nilai_normal_byid($data->id_penilaian)->nilai_normal); ?>
                                                 <tr>
                                                     <td><?= $key + 1 ?></td>
-                                                    <td><?= get_guru_byid($data->id_guru)->nbm_guru ?></td>
+                                                    <td><?= get_guru_byid($data->id_guru)->nuptk_guru ?></td>
                                                     <td><?= get_guru_byid($data->id_guru)->nama_guru ?></td>
                                                     <?php foreach ($kriteria->result() as $key => $kri) { ?>
                                                         <td><?= $val[$key] ?></td>
@@ -132,7 +132,7 @@
                                         <thead>
                                             <tr>
                                                 <th width="5%">No</th>
-                                                <th>NBM</th>
+                                                <th>nuptk</th>
                                                 <th>Nama</th>
                                                 <?php foreach ($kriteria->result() as $key => $kri) { ?>
                                                     <th><?= $kri->atribut_kriteria ?></th>
@@ -144,7 +144,7 @@
                                                 $val = explode(',', $data->nilai_penilaian); ?>
                                                 <tr>
                                                     <td><?= $key + 1 ?></td>
-                                                    <td><?= get_guru_byid($data->id_guru)->nbm_guru ?></td>
+                                                    <td><?= get_guru_byid($data->id_guru)->nuptk_guru ?></td>
                                                     <td><?= get_guru_byid($data->id_guru)->nama_guru ?></td>
                                                     <?php foreach ($kriteria->result() as $key => $kri) { ?>
                                                         <td><?= $val[$key] ?></td>
@@ -162,7 +162,7 @@
                                         <thead>
                                             <tr>
                                                 <th width="5%">No</th>
-                                                <th>NBM</th>
+                                                <th>nuptk</th>
                                                 <th>Nama</th>
                                                 <th>Nilai</th>
                                                 <th>Grade</th>
@@ -178,7 +178,7 @@
                                             ?>
                                                 <tr>
                                                     <td><?= $key + 1 ?></td>
-                                                    <td><?= get_guru_byid($data->id_guru)->nbm_guru ?></td>
+                                                    <td><?= get_guru_byid($data->id_guru)->nuptk_guru ?></td>
                                                     <td><?= get_guru_byid($data->id_guru)->nama_guru ?></td>
                                                     <td><?= $data->hasil_penilaian ?></td>
                                                     <td><?= $all_grade['grade'] ?></td>

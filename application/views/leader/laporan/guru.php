@@ -18,7 +18,7 @@ $idd = get_guru_byid($temp->id_guru);
 <body>
     <section style="margin-bottom: 20px;">
         <center>
-            <img src="<?= base_url() . 'assets/images/surat/kop-surat.JPG' ?>" alt="" style="width:100%;height:140px">
+            <img src="<?= base_url() . 'assets/images/surat/kop-surat.png' ?>" alt="" style="width:100%;height:140px">
         </center>
     </section>
     <section>
@@ -38,9 +38,9 @@ $idd = get_guru_byid($temp->id_guru);
             </tr>
 
             <tr>
-                <td style="padding:5px"><b>NBM Guru</b></td>
+                <td style="padding:5px"><b>nuptk Guru</b></td>
                 <td style="padding:5px"><b>:</b></td>
-                <td style="padding:5px"><b><?= $idd->nbm_guru ?></b></td>
+                <td style="padding:5px"><b><?= $idd->nuptk_guru ?></b></td>
             </tr>
             <tr>
                 <td style="padding:5px"><b>Nama Guru</b></td>

@@ -7,13 +7,13 @@
                         <h5>Perbaharui Profile</h5>
                     </div>
                 </div>
-                <form action="<?= site_url('leader/profile/update') ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                <form action="<?= site_url('guru/profile/update') ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
                     <input type="hidden" name="id" value="<?= @$row->id_user ?>">
                     <div class="row mt-3">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Username *</label>
-                                <input type="text" name="username_user" value="<?= @$row->username_user ?>" class="form-control" placeholder="ex. 7311732" required>
+                                <input type="text" name="username_user" value="<?= @$row->username_user ?>" class="form-control bg-transparent" placeholder="ex. 7311732" readonly>
                             </div>
                         </div>
                         <div class="col-sm-6">
