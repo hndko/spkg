@@ -67,7 +67,7 @@
                     <form action="" method="post">
                         <label> Cari Data Penilaianmu dengan mengisi nuptk mu dibawah ini * </label>
                         <div class="input-group mb-3 mt-2">
-                            <input type="number" name="nuptk" class="form-control" placeholder="Nomor Baku Muhammadiyah (nuptk) Guru" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                            <input type="number" name="nuptk" class="form-control" placeholder="Nomor Unik Pendidik dan Tenaga Kependidikan" aria-label="Recipient's username" aria-describedby="button-addon2" required>
                             <button type="submit" name="cek" class="btn btn-success" type="button" id="button-addon2">Cek Penilaian</button>
                         </div>
                     </form>
