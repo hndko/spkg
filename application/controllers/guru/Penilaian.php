@@ -15,10 +15,18 @@ class Penilaian extends CI_Controller
     public function index()
     {
         $user = $this->users_m->get_user($this->session->userdata('user_id'));
-        $data = [
-            'guru' => $this->guru_m->get_guru_nuptk($user->username_user)
-        ];
+        $guru = $this->guru_m->get_guru_nuptk($user->username_user);
 
+        // Check if $guru is not empty
+        if ($guru->num_rows() > 0) {
+            $data = [
+                'guru' => $guru
+            ];
+        } else {
+            $data = [
+                'guru' => null
+            ];
+        }
         $this->template->load('guru/template', 'guru/penilaian/index', $data);
     }
 

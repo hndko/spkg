@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 03, 2024 at 05:06 PM
+-- Generation Time: Sep 14, 2024 at 05:15 AM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.33
 
@@ -38,7 +38,8 @@ CREATE TABLE `tbl_dokumen_pendukung` (
 --
 
 INSERT INTO `tbl_dokumen_pendukung` (`id`, `file`, `created_at`) VALUES
-(2, '30082024.jpg', '2024-09-03 10:24:38');
+(2, '30082024.jpg', '2024-09-03 10:24:38'),
+(3, 'mpdf_(1).pdf', '2024-09-14 05:02:30');
 
 -- --------------------------------------------------------
 
@@ -67,6 +68,7 @@ INSERT INTO `tbl_guru` (`id_guru`, `id_user`, `nuptk_guru`, `nama_guru`, `ttl_gu
 ('1GhC90eBvrgPy6uVqF2tXsTJAxw78D', '04494775897859116283626370058312531', '172518', 'Ismail Marzuki, S.KM', 'Sleman, 18 Oktober 1978', 'L', '089901829167', 'l. Panembahan Senopati No.1-3, Ngupasan, Kec. Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55122', 'guru-172518.png', '2022-06-27 01:08:01'),
 ('99844622586478595', '99844622586478595', '545549', 'Dadang Priyatmaji, S.Sos.I', 'Yogyakarta, 23 Maret 1972', 'L', '08123412345678', 'Jl. Cik Di Tiro No.23, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223', 'guru-545549.jpg', '2022-06-26 19:42:07'),
 ('KT7oWLin40NMHzvfXSAaPmIV5ey9Jp', '62766949733061441274583818290035052', '418429', 'Andra Sutepa, S.Pd', 'Bantul', 'L', '079901728190', '-', NULL, '2022-06-28 18:47:28'),
+('kTKFhNzZVyBO1Gd8qbQWjnJMexC2Eo', '56160952394707483', '12345', 'Guru EX', 'Jakarta', 'L', '0899985739', 'jl petojo barat iv', 'guru-12345.png', '2024-09-07 12:33:15'),
 ('mLOxGa2fiztsCARuhIK57oNwvXlyHY', '54175165488512930792914606240392338', '771884', 'Karenina Kelana, S.Pd', 'Wates, 15 Juni 1982', 'P', '07166781929', '-', NULL, '2022-06-28 18:48:14'),
 ('u25d1IqZK9DWTrecg8FGUpAlPt0Skw', '49928275407882774950161583166341306', '731265', 'David Sudrajad, S.Pd', 'Sleman', 'L', '087717172828', 'Jl. Jend. Sudirman, Gowongan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233', NULL, '2022-06-28 04:01:19');
 
@@ -200,6 +202,7 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`id_user`, `username_user`, `password_user`, `level_user`, `status_user`, `created_user`) VALUES
 ('38460547718053292', '172518', 'c2515e36081809c823e986721982783e1a1a0518', 3, 1, '2024-09-03 13:44:59'),
+('96217648387901403', '12345', 'c2515e36081809c823e986721982783e1a1a0518', 3, 1, '2024-09-07 12:33:49'),
 ('99844622586478591', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, 1, '2022-06-26 18:08:02'),
 ('99844622586478592', 'kepsek', 'c60146fc836639f8c33d5123bf9137ec9cb2c6be', 2, 1, '2022-06-26 18:08:02');
 
@@ -260,7 +263,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_dokumen_pendukung`
 --
 ALTER TABLE `tbl_dokumen_pendukung`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_kriteria`

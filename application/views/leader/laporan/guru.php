@@ -12,7 +12,6 @@ $idd = get_guru_byid($temp->id_guru);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Penilaian Kinerja Guru</title>
     <link rel="shortcut icon" href="<?= base_url() ?>assets/images/logo-m.png" />
-
 </head>
 
 <body>
@@ -38,26 +37,25 @@ $idd = get_guru_byid($temp->id_guru);
             </tr>
 
             <tr>
-                <td style="padding:5px"><b>nuptk Guru</b></td>
+                <td style="padding:5px"><b>NUPTK Guru</b></td>
                 <td style="padding:5px"><b>:</b></td>
-                <td style="padding:5px"><b><?= $idd->nuptk_guru ?></b></td>
+                <td style="padding:5px"><b><?= $idd ? $idd->nuptk_guru : 'N/A' ?></b></td>
             </tr>
             <tr>
                 <td style="padding:5px"><b>Nama Guru</b></td>
                 <td style="padding:5px"><b>:</b></td>
-                <td style="padding:5px"><b><?= $idd->nama_guru ?></b></td>
+                <td style="padding:5px"><b><?= $idd ? $idd->nama_guru : 'N/A' ?></b></td>
             </tr>
             <tr>
                 <td style="padding:5px"><b>TTL Guru</b></td>
                 <td style="padding:5px"><b>:</b></td>
-                <td style="padding:5px"><b><?= $idd->ttl_guru ?></b></td>
+                <td style="padding:5px"><b><?= $idd ? $idd->ttl_guru : 'N/A' ?></b></td>
             </tr>
             <tr>
                 <td style="padding:5px"><b>Telepon Guru</b></td>
                 <td style="padding:5px"><b>:</b></td>
-                <td style="padding:5px"><b><?= $idd->telp_guru ?></b></td>
+                <td style="padding:5px"><b><?= $idd ? $idd->telp_guru : 'N/A' ?></b></td>
             </tr>
-
         </table>
 
         <table width="100%" border="1" style="margin-top:20px;font-family: 'Orbitron', sans-serif; font-size:12px; border-collapse: collapse; ">
@@ -70,31 +68,35 @@ $idd = get_guru_byid($temp->id_guru);
             </thead>
             <tbody>
                 <?php
-                $n_k = explode(',', $temp->nilai_penilaian);
-                $n_grade = grade_nilai($temp->hasil_penilaian);
-                foreach (get_kriteria_atribut()->result() as $key => $kri) { ?>
+                if ($temp) {
+                    $n_k = explode(',', $temp->nilai_penilaian);
+                    $n_grade = grade_nilai($temp->hasil_penilaian);
+                    foreach (get_kriteria_atribut()->result() as $key => $kri) { ?>
+                        <tr>
+                            <td style="padding:5px"><?= $key + 1 ?></td>
+                            <td style="padding:5px"><?= $kri->data_kriteria ?></td>
+                            <td style="padding:5px"><?= isset($n_k[$key]) ? $n_k[$key] : 'N/A' ?></td>
+                        </tr>
+                    <?php } ?>
                     <tr>
-                        <td style="padding:5px"><?= $key + 1 ?></td>
-                        <td style="padding:5px"><?= $kri->data_kriteria ?></td>
-                        <td style="padding:5px"><?= $n_k[$key] ?></td>
+                        <td style="padding:5px" colspan="2" align="right"><b>Total Penilaian</b></td>
+                        <td style="padding:5px"><?= $temp->hasil_penilaian . ' (' . ($temp->hasil_penilaian * 100) . ')' ?></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px" colspan="2" align="right"><b>Grade Penilaian</b></td>
+                        <td style="padding:5px"><?= $n_grade['grade'] . ' | ' . $n_grade['keterangan'] ?></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px" colspan="2" align="right"><b>Urutan Peringkat</b></td>
+                        <td style="padding:5px"><?= get_rangking_byid($temp->id_guru) ?: 'N/A' ?></td>
+                    </tr>
+                <?php } else { ?>
+                    <tr>
+                        <td style="padding:5px" colspan="3" align="center">Data tidak tersedia</td>
                     </tr>
                 <?php } ?>
-                <tr>
-                    <td style="padding:5px" colspan="2" align="right"><b>Total Penilaian</b></td>
-                    <td style="padding:5px"><?= $temp->hasil_penilaian . ' (' . ($temp->hasil_penilaian * 100) . ')' ?></td>
-                </tr>
-                <tr>
-                    <td style="padding:5px" colspan="2" align="right"><b>Grade Penilaian</b></td>
-                    <td style="padding:5px"><?= $n_grade['grade'] . ' | ' . $n_grade['keterangan'] ?></td>
-                </tr>
-                <tr>
-                    <td style="padding:5px" colspan="2" align="right"><b>Urutan Peringkat</b></td>
-                    <td style="padding:5px"><?= get_rangking_byid($temp->id_guru) ?></td>
-                </tr>
             </tbody>
         </table>
-
-
     </section>
     <section style="margin-top:100px;text-align: justify;">
         <small>

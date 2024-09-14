@@ -19,7 +19,7 @@
                                     <td>Laporan Tiap Guru</td>
                                     <td>:</td>
                                     <td>
-                                        <form action="<?= site_url('leader/laporan/cetak') ?>" method="post" target="_blank">
+                                        <form action="<?= site_url('guru/laporan/cetak') ?>" method="post" target="_blank">
                                             <div class="row">
                                                 <div class="col-sm-8">
                                                     <select name="id" class="form-control mb-2" data-live-search="true" required>

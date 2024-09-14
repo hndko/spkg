@@ -4,7 +4,6 @@ require 'vendor/autoload.php';
 
 class Laporan extends CI_Controller
 {
-
     function __construct()
     {
         parent::__construct();
@@ -27,9 +26,10 @@ class Laporan extends CI_Controller
     {
         $post = $this->input->post(null, true);
         if (isset($post['cetak'])) {
+            $id_guru = $post['id'];
             $data = [
                 'kriteria' => $this->penilaian_m->get_kriteria(),
-                'row' => $this->penilaian_m->get_nilai_byguru($post['id']),
+                'row' => $this->penilaian_m->get_nilai_byguru($id_guru),
             ];
             $mpdf = new \Mpdf\Mpdf([
                 'mode' => 'utf-8',
